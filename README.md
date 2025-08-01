@@ -10,12 +10,12 @@ Supported Versions:
 ## Implemented
 ### SiteManager API
 - [x] List Sites
+- [x] List Hosts
 - [x] List SD-WAN Configs
 - [x] Get ISP Metrics
 
 ## Not Yet Implemented
 ### SiteManager API
-- [ ] List Hosts
 - [ ] Get Host by ID
 - [ ] List Devices
 - [ ] Query ISP Metrics
@@ -27,7 +27,7 @@ Supported Versions:
 #### Sites
 - [ ] List Local Sites
 #### Unifi Devices
-- [x] Execute Port Action
+- [ ] Execute Port Action
 - [ ] Execute Device Action
 - [ ] List Devices
 - [ ] Get Device Details
