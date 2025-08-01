@@ -1,42 +1,57 @@
 # UnifiApi
 
-Supported Versions:
+## Disclaimer
 
-| API         | Version |
-|-------------|---------|
-| SiteManager | v1.0    |
-| Network     | 9.3.43  |
+This project is not affiliated with, endorsed by, or sponsored by Ubiquiti Inc. (UniFi®).
+All trademarks and copyrights belong to their respective owners.
 
-## Implemented
-### SiteManager API
+## Crates
+
+- [`sitemanager`](./sitemanager): Interface for Unifi Site Manager endpoint
+
+## Usage
+
+Each crate can be imported independently into your Rust project.
+To use all of them together, you can include them as a workspace in your own project.
+
+## Development
+
+```bash
+cargo build
+cargo test
+```
+
+## Features
+### Implemented
+#### SiteManager API
 - [x] List Sites
 - [x] List Hosts
 - [x] List SD-WAN Configs
 - [x] Get ISP Metrics
 
-## Not Yet Implemented
-### SiteManager API
+### Not Yet Implemented
+#### SiteManager API
 - [ ] Get Host by ID
 - [ ] List Devices
 - [ ] Query ISP Metrics
 - [ ] Get SD-WAN Config by ID
 - [ ] Get SD-WAN Config Status
-### Network API
-#### About Application
+#### Network API
+##### About Application
 - [ ] Get Application Info
-#### Sites
+##### Sites
 - [ ] List Local Sites
-#### Unifi Devices
+##### Unifi Devices
 - [ ] Execute Port Action
 - [ ] Execute Device Action
 - [ ] List Devices
 - [ ] Get Device Details
 - [ ] Get Latest Device Statistics
-#### Clients
+##### Clients
 - [ ] Execute Client Action
 - [ ] List Connected Clients
 - [ ] Get Connected Client Details
-#### Hotspot Vouchers
+##### Hotspot Vouchers
 - [ ] List Vouchers
 - [ ] Generate Vouchers
 - [ ] Delete Vouchers
