@@ -88,7 +88,7 @@ pub struct IspInfo {
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Percentages {
-    pub tx_retry: f64,
+    pub tx_retry: Option<f64>,
     pub wan_uptime: f64,
 }
 
@@ -103,9 +103,7 @@ pub struct WanMagic {
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WanInfo {
-    #[serde(default)]
     pub external_ip: Option<String>,
-    #[serde(default)]
     pub isp_info: Option<IspInfo>,
     pub wan_issues: Vec<WanIssue>,
     pub wan_uptime: f32,
