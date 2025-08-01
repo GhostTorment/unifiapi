@@ -7,6 +7,8 @@ A Rust library for interacting with the UniFi Site Manager API.
 This project is not affiliated with, endorsed by, or sponsored by Ubiquiti Inc. (UniFi®).
 All trademarks and copyrights belong to their respective owners.
 
+⚠️ This crate is under active development and not yet stable. Use at your own risk. ⚠️
+
 ## Features
 
 ### Implemented
