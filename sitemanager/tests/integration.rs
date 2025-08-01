@@ -12,6 +12,15 @@ async fn test_list_sites() {
 }
 
 #[tokio::test]
+async fn test_list_hosts() {
+    dotenv().ok();
+    let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
+    let result = list_hosts::list_hosts(&api_key).await;
+    println!("{:?}", result);
+    assert!(result.is_ok());
+}
+
+#[tokio::test]
 async fn test_list_sd_wan_configs() {
     dotenv().ok();
     let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");

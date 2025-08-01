@@ -1,10 +1,10 @@
-use crate::endpoints::list_sites::models::ApiResponse;
+use crate::endpoints::list_hosts::models::ApiResponse;
 use reqwest;
 
 pub mod models;
 
-pub async fn list_sites(api_key: &str) -> Result<ApiResponse, Box<dyn std::error::Error>> {
-    static API_URL: &str = "https://api.ui.com/v1/sites?pageSize=1000";
+pub async fn list_hosts(api_key: &str) -> Result<ApiResponse, Box<dyn std::error::Error>> {
+    static API_URL: &str = "https://api.ui.com/v1/hosts?pageSize=1000";
 
     let client = reqwest::Client::new();
 
