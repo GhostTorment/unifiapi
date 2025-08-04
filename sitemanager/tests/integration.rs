@@ -6,6 +6,7 @@
 // or the MIT license <http://opensource.org/licenses/MIT>, at your option.
 // This file may not be copied, modified, or distributed except according to those terms.
 
+use chrono::Utc;
 use dotenvy::dotenv;
 use std::env;
 use unifiapi_sitemanager::endpoints::query_isp_metrics::models::{Site, Sites};
@@ -65,6 +66,27 @@ async fn test_query_isp_metrics() {
     };
 
     let result = query_isp_metrics::query_isp_metrics(&api_key, "5m", &sites).await;
+    println!("{:?}", result);
+    assert!(result.is_ok());
+}
+
+#[tokio::test]
+async fn test_get_host_by_id() {
+    dotenv().ok();
+    let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
+    let host_id = env::var("TEST_HOST").expect("TEST_HOST must be set");
+    let result = get_host_by_id::get_host_by_id(&api_key, &*host_id).await;
+    println!("{:?}", result);
+    assert!(result.is_ok());
+}
+
+#[tokio::test]
+async fn test_list_devices() {
+    dotenv().ok();
+    let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
+    let host_id = env::var("TEST_HOST").expect("TEST_HOST must be set");
+    let host_ids = vec![host_id.as_str()];
+    let result = list_devices::list_devices(&api_key, host_ids, Utc::now()).await;
     println!("{:?}", result);
     assert!(result.is_ok());
 }

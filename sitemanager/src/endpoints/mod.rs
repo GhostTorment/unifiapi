@@ -6,7 +6,9 @@
 // or the MIT license <http://opensource.org/licenses/MIT>, at your option.
 // This file may not be copied, modified, or distributed except according to those terms.
 
+pub mod get_host_by_id;
 pub mod get_isp_metrics;
+pub mod list_devices;
 pub mod list_hosts;
 pub mod list_sd_wan_configs;
 pub mod list_sites;

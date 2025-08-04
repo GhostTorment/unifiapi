@@ -29,11 +29,11 @@ cargo test
 - [x] List SD-WAN Configs
 - [x] Get ISP Metrics
 - [x] Query ISP Metrics
+- [x] Get Host by ID
+- [x] List Devices
 
 ### Not Yet Implemented
 #### SiteManager API
-- [ ] Get Host by ID
-- [ ] List Devices
 - [ ] Get SD-WAN Config by ID
 - [ ] Get SD-WAN Config Status
 #### Network API
