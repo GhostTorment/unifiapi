@@ -90,3 +90,13 @@ async fn test_list_devices() {
     println!("{:?}", result);
     assert!(result.is_ok());
 }
+
+#[tokio::test]
+async fn test_get_sd_wan_config_by_id() {
+    dotenv().ok();
+    let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
+    let sdwan_id = env::var("TEST_SDWAN").expect("TEST_SDWAN must be set");
+    let result = get_sd_wan_config_by_id::get_sd_wan_config_by_id(&api_key, &*sdwan_id).await;
+    println!("{:?}", result);
+    assert!(result.is_ok());
+}

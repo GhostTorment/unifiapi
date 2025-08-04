@@ -31,10 +31,10 @@ cargo test
 - [x] Query ISP Metrics
 - [x] Get Host by ID
 - [x] List Devices
+- [x] Get SD-WAN Config by ID
 
 ### Not Yet Implemented
 #### SiteManager API
-- [ ] Get SD-WAN Config by ID
 - [ ] Get SD-WAN Config Status
 #### Network API
 ##### About Application

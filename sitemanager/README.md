@@ -19,9 +19,9 @@ All trademarks and copyrights belong to their respective owners.
 - [x] Query ISP Metrics
 - [x] Get Host by ID
 - [x] List Devices
+- [x] Get SD-WAN Config by ID
 
 ### Not Yet Implemented
-- [ ] Get SD-WAN Config by ID
 - [ ] Get SD-WAN Config Status
 
 ## Usage
