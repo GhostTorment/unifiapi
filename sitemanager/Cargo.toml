@@ -1,6 +1,6 @@
 [package]
 name = "unifiapi_sitemanager"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 authors = ["Jak Bracegirdle <jak@bracegirdle.io>"]
 description = "A Rust library for interacting with the UniFi Site Manager API."

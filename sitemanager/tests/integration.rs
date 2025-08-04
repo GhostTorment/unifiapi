@@ -6,7 +6,6 @@
 // or the MIT license <http://opensource.org/licenses/MIT>, at your option.
 // This file may not be copied, modified, or distributed except according to those terms.
 
-use chrono::Utc;
 use dotenvy::dotenv;
 use std::env;
 use unifiapi_sitemanager::endpoints::query_isp_metrics::models::{Site, Sites};
@@ -86,7 +85,7 @@ async fn test_list_devices() {
     let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
     let host_id = env::var("TEST_HOST").expect("TEST_HOST must be set");
     let host_ids = vec![host_id.as_str()];
-    let result = list_devices::list_devices(&api_key, host_ids, Utc::now()).await;
+    let result = list_devices::list_devices(&api_key, host_ids).await;
     println!("{:?}", result);
     assert!(result.is_ok());
 }

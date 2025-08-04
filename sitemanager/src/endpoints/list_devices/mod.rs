@@ -7,7 +7,6 @@
 // This file may not be copied, modified, or distributed except according to those terms.
 
 use crate::endpoints::list_devices::models::ApiResponse;
-use chrono::{DateTime, SecondsFormat, Utc};
 use reqwest;
 use std::error::Error;
 
@@ -16,20 +15,12 @@ pub mod models;
 pub async fn list_devices(
     api_key: &str,
     host_ids: Vec<&str>,
-    time: DateTime<Utc>,
 ) -> Result<ApiResponse, Box<dyn Error>> {
-    let mut q_host_ids = "[".to_string();
+    let q_host_ids = format!("[{}]", host_ids.join(","));
 
-    for host_id in host_ids {
-        q_host_ids.push_str(&format!("{host_id},"));
-    }
+    let api_url = format!("https://api.ui.com/v1/devices?hostIds={q_host_ids}&pageSize=1000");
 
-    let rfc3339 = time.to_rfc3339_opts(SecondsFormat::Secs, true);
-
-    q_host_ids.push_str("]");
-
-    let api_url =
-        format!("https://api.ui.com/v1/devices?hostIds={q_host_ids}&time={rfc3339}&pageSize=1000");
+    println!("{}", api_url);
 
     let client = reqwest::Client::new();
     let response = client
