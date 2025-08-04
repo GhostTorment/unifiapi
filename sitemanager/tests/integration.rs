@@ -8,6 +8,7 @@
 
 use dotenvy::dotenv;
 use std::env;
+use unifiapi_sitemanager::endpoints::query_isp_metrics::models::{Site, Sites};
 use unifiapi_sitemanager::endpoints::*;
 
 #[tokio::test]
@@ -41,7 +42,29 @@ async fn test_list_sd_wan_configs() {
 async fn test_get_isp_metrics() {
     dotenv().ok();
     let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
-    let result = get_isp_metrics::get_isp_metrics(&api_key, "5m", None, None, Option::from("24h")).await;
+    let result =
+        get_isp_metrics::get_isp_metrics(&api_key, "5m", None, None, Option::from("24h")).await;
+    println!("{:?}", result);
+    assert!(result.is_ok());
+}
+
+#[tokio::test]
+async fn test_query_isp_metrics() {
+    dotenv().ok();
+    let api_key = env::var("SITEMANAGER_API_KEY").expect("SITEMANAGER_API_KEY must be set");
+    let host_id = env::var("TEST_HOST").expect("TEST_HOST must be set");
+    let site_id = env::var("TEST_SITE").expect("TEST_SITE must be set");
+
+    let sites = Sites {
+        sites: vec![Site {
+            begin_timestamp: None,
+            end_timestamp: None,
+            host_id,
+            site_id,
+        }],
+    };
+
+    let result = query_isp_metrics::query_isp_metrics(&api_key, "5m", &sites).await;
     println!("{:?}", result);
     assert!(result.is_ok());
 }

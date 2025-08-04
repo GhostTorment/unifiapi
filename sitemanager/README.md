@@ -16,11 +16,11 @@ All trademarks and copyrights belong to their respective owners.
 - [x] List Hosts
 - [x] List SD-WAN Configs
 - [x] Get ISP Metrics
+- [x] Query ISP Metrics
 
 ### Not Yet Implemented
 - [ ] Get Host by ID
 - [ ] List Devices
-- [ ] Query ISP Metrics
 - [ ] Get SD-WAN Config by ID
 - [ ] Get SD-WAN Config Status
 
