@@ -11,7 +11,6 @@ All trademarks and copyrights belong to their respective owners.
 
 ## Features
 
-### Implemented
 - [x] List Sites
 - [x] List Hosts
 - [x] List SD-WAN Configs
@@ -20,9 +19,7 @@ All trademarks and copyrights belong to their respective owners.
 - [x] Get Host by ID
 - [x] List Devices
 - [x] Get SD-WAN Config by ID
-
-### Not Yet Implemented
-- [ ] Get SD-WAN Config Status
+- [x] Get SD-WAN Config Status
 
 ## Usage
 

@@ -9,6 +9,7 @@
 pub mod get_host_by_id;
 pub mod get_isp_metrics;
 pub mod get_sd_wan_config_by_id;
+pub mod get_sd_wan_config_status;
 pub mod list_devices;
 pub mod list_hosts;
 pub mod list_sd_wan_configs;

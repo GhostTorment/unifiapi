@@ -22,8 +22,8 @@ cargo test
 ```
 
 ## Features
-### Implemented
-#### SiteManager API
+
+### SiteManager API
 - [x] List Sites
 - [x] List Hosts
 - [x] List SD-WAN Configs
@@ -32,11 +32,11 @@ cargo test
 - [x] Get Host by ID
 - [x] List Devices
 - [x] Get SD-WAN Config by ID
+- [x] Get SD-WAN Config Status
 
-### Not Yet Implemented
-#### SiteManager API
-- [ ] Get SD-WAN Config Status
-#### Network API
+### Network API
+
+#### Not Yet Implemented
 ##### About Application
 - [ ] Get Application Info
 ##### Sites
